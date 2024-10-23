@@ -1,112 +1,155 @@
 /* General Styles */
+/* General Styles */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-  }
-  
-  .home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  /* Header Section */
-  .header {
-    background-color: #0f243b;
-    width: 100%;
-    text-align: center;
-    padding: 60px 0;
-    color: white;
-  }
-  
-  .title {
-    font-size: 48px;
-    margin: 0;
-  }
-  
-  .subtitle {
-    font-size: 24px;
-    margin-top: 10px;
-  }
-  
-  /* Introduction Section */
-  .intro {
-    margin: 40px 0;
-    text-align: center;
-  }
-  
-  .intro h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-  }
-  
-  .intro p {
-    font-size: 18px;
-    max-width: 600px;
-  }
-  
-  /* Services Section */
-  .services {
-    margin: 40px 0;
-    text-align: center;
-  }
-  
-  .services h2 {
-    font-size: 32px;
-  }
-  
-  .services ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .services li {
-    font-size: 20px;
-    margin: 10px 0;
-  }
-  
-  /* Call-to-Action Section */
-  .cta {
-    margin: 60px 0;
-    text-align: center;
-  }
-  
-  .cta h2 {
-    font-size: 32px;
-  }
-  
-  .cta p {
-    font-size: 18px;
-    margin: 10px 0;
-  }
-  
-  .cta-button {
-    background-color: #0f243b;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-  }
-  
-  .cta-button:hover {
-    background-color: #357ABD;
-  }
-  
-  /* Footer */
-  .footer {
-    background-color: #333;
-    color: white;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    position: absolute;
-    bottom: 0;
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px; /* Reduced padding to make the navbar more compact */
+  background-color: #333;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  width: 40px; /* Define a fixed width for the hamburger menu */
+  padding-right: 5%;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 100%; /* Ensure spans fill the width of the hamburger container */
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Navigation Menu Styles */
+.nav-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #8f8f8f;
+  padding: 10px;
+  border-radius: 5px;
+  padding-right: 10%;
+}
+
+.nav-menu.active {
+  display: flex;
+}
+
+.nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu ul li {
+  margin: 10px 0;
+}
+
+.nav-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url('/public/kaiosite_background.png') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  color: white;
+  text-align: center;
+  max-width: 80%;
+  margin-bottom: 50px;
+}
+
+.overlay h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.overlay p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* Section Styles */
+.section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80%;
+  background-color: #444; /* Default background for sections */
+  color: white;
+  text-align: center;
+}
+
+.about-section {
+  background-color: #4a91e288; /* Unique color for About Us */
+}
+
+.contact-section {
+  background-color: #ff6e61ac; /* Unique color for Contact Us */
+}
+
+.section h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.section p {
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 10px;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #333;
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+}
