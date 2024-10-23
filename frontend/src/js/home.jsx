@@ -1,33 +1,63 @@
-import React, { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import "../css/home.css";
 
 function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
+  const [showContact, setShowContact] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const toggleAbout = () => {
+    setShowContact(false); // Ensure only one section is visible at a time
+    setShowAbout(!showAbout); // Toggle About section visibility
+  };
+
+  const toggleContact = () => {
+    setShowAbout(false); // Ensure only one section is visible at a time
+    setShowContact(!showContact); // Toggle Contact section visibility
+  };
+
   return (
     <div className="home-container">
-      <header className="header">
-        <h1 className="title">Welcome to Kaio Labs</h1>
-        <p className="subtitle">place holder</p>
+      <header className="navbar">
+        <div className="logo">Kaio Labs</div>
+        <div className={"hamburger"} onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav className={`nav-menu ${menuOpen ? "active" : ""}`}>
+          <ul>
+            <li onClick={toggleAbout}>About Us</li>
+            <li onClick={toggleContact}>Contact</li>
+          </ul>
+        </nav>
       </header>
 
-      <section className="intro">
-        <h2>About Us</h2>
-        <p>Placeholder for the description of Kaio Labs' mission, research focus, and academic goals.</p>
-      </section>
+      <section className="hero">
+        <div className="overlay">
+          <h1>Kaio Labs</h1>
+          <p>Placeholder for introductory text on Kaio Labs, its vision, and innovation.</p>
+        </div>
 
-      <section className="services">
-        <h2>Our Services</h2>
-        <ul>
-          <li>Placeholder for research consulting</li>
-          <li>Placeholder for academic workshops</li>
-          <li>Placeholder for data analysis and tools</li>
-        </ul>
-      </section>
+        {/* Conditionally render the About section */}
+        {showAbout && (
+          <div className="section about-section">
+            <h1>About Us</h1>
+            <p>Placeholder for About us</p>
+          </div>
+        )}
 
-      <section className="cta">
-        <h2>Join Us</h2>
-        <p>Placeholder for a call to action inviting students, researchers, and collaborators to get involved.</p>
-        <button className="cta-button">Learn More</button>
+        {/* Conditionally render the Contact section */}
+        {showContact && (
+          <div className="section contact-section">
+            <h1>Contact Us</h1>
+            <p>Placeholder for Contact us</p>
+          </div>
+        )}
       </section>
 
       <footer className="footer">
@@ -38,4 +68,3 @@ function Home() {
 }
 
 export default Home;
-
