@@ -41,6 +41,7 @@ function Home() {
         <div className="overlay">
           <h1>Kaio Labs</h1>
           <p>Placeholder for introductory text on Kaio Labs, its vision, and innovation.</p>
+          <a href="https://pikbest.com/free-backgrounds/medical.html">Free MEDICAL backgrounds from pikbest.com</a>
         </div>
 
         {/* Conditionally render the About section */}
